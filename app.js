@@ -18,7 +18,7 @@ const authMiddleware = require('./middleware/authentication')
 
 // routes
 app.use('/api/auth', authRoute)
-app.use('/sudoku', sudokuRoute)
+app.use('/sudoku', authMiddleware ,sudokuRoute)
 app.use(notFoundMiddleware)
 app.use(errorHandlerMiddleware)
 
